@@ -12,8 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('complaints', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id('complaint_id');
+            $table->string('description');
+            $table->string('category');
+            $table->string('department');
+            $table->timestamp('submitted_date');
+            $table->timestamp('submitted_time');
+            $table->string('status');
+            $table->string('task')->nullable();
         });
     }
 

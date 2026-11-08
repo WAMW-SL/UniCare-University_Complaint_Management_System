@@ -12,8 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('maintaince_tasks', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id('task_id');
+            $table->unsignedBigInteger('complaint_id');
+            $table->string('description');
+            $table->string('deadline');
+            $table->string('status');
+            $table->string("workers_assigned")->nullable();
+            $table->foreign('complaint_id')->references('complaint_id')->on('complaints');
         });
     }
 
