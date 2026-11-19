@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Jomhuria&family=Skranji:wght@400;700&display=swap');
+*{
+    margin: 0px;
+}
+.logo{
+    object-fit: contain;
+    width: 95px;
+    height: 95px;
+}
+
+.header{
+    background-color: white;
+    width: auto;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+}
+.header span{
+    font-family: "Jomhuria", serif;
+    font-size: 65px;
+    margin-top: 10px;
+}
+body{
+    background-color: #D3EFEF;
+}
