@@ -10,3 +10,7 @@ Route::get('/student/submitComplaint', function () {
     return view('student.complaints.create');
 });
 
+Route::get('/student/editComplaint', function () {
+    return view('student.complaints.edit');
+});
+
