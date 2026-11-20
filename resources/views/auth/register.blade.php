@@ -71,6 +71,53 @@
      button:hover {
          background: #146b68;
      }
+
+     label {
+            display: block;
+            margin-top: 12px;
+            font-weight: bold;
+            color: #063756;
+            font-size: 14px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 18px;
+            padding: 10px;
+            font-size: 15px;
+        }
+
+        .alert-error {
+            background: #fde8e8;
+            color: #9b1c1c;
+            border: 1px solid #f8b4b4;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 14px;
+            font-size: 13px;
+        }
+
+        .alert-success {
+            background: #def7ec;
+            color: #03543f;
+            border: 1px solid #84e1bc;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 14px;
+            font-size: 13px;
+        }
+
+        .login-link {
+            margin-top: 14px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .login-link a {
+            color: #1c8b87;
+            font-weight: bold;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -86,12 +133,18 @@
         <h2>Registration Form</h2>
 
         @if ($errors->any())
-            <div>
-                <ul>
+            <div class="alert-error">
+                <ul style="margin: 0; padding-left: 18px;">
                     @foreach ($errors->all() as $error)
                         <li>{{ $error }}</li>
                     @endforeach
                 </ul>
+            </div>
+        @endif
+
+        @if (session('success'))
+            <div class="alert-success">
+                {{ session('success') }}
             </div>
         @endif
 
@@ -144,10 +197,11 @@
 
             <button type="submit">Register</button>
 
-            <p>
-                Already have an account? <a href="{{ route('login') }}">Login</a>
-            </p>
+            
         </form>
+        <p class="login-link">
+            Already have an account? <a href="{{ route('login') }}">Login here</a>
+        </p>
     </div>
 </body>
 </html>
