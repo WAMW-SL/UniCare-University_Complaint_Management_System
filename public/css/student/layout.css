@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Jomhuria&family=Skranji:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gurajada&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+*{
+    margin: 0px;
+}
+.logo{
+    object-fit: contain;
+    width: 95px;
+    height: 95px;
+}
+
+.header{
+    background-color: white;
+    width: 1286px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+    position: absolute;
+    left: 250px;
+    top:0px;
+}
+.header span{
+    font-family: "Jomhuria", serif;
+    font-size: 65px;
+    margin-top: 0px;
+}
+body{
+    background-color: #D3EFEF;
+}
+.sidebar{
+    background-color: #123B5D;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 250px;
+    height: 729px;
+}
+
+.tab{
+  position: fixed;
+  left:250px;
+  top:70px;
+  width: 1286px;
+  height: 659px;
+}
+
+.tabs{
+    margin-right: 0px !important;
+    position: absolute !important;
+    left: 7px;
+    top:100px ;
+    gap: 20px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.tabBtn{
+    padding: 0px !important;
+    padding-left: 20px !important;
+    display: flex;
+    gap: 20px;
+    color: white;
+    font-family: "Josefin Sans", sans-serif;
+}
+.tabBtn:hover{
+    color: white;
+}
+
+.tabBtn img,.logout img{
+    width: 25px;
+    height: 25px;
+}
+
+.dash{
+       padding: 10px 85px 10px 20px !important;
+}
+.prof{
+    padding: 10px 89px 10px 20px !important;
+}
+.compl{
+    padding:10px 55px 10px 20px !important;
+}
+
+.tabBtn.active{
+    background-color: #1D8E8E !important
+}
+
+.logoutBtn{
+    position: absolute !important;
+    bottom: 54px !important;
+    left: 49px !important;
+    color: white;
+    background-color: #123B5D;
+    border: 0px;
+    padding: 0px;
+    display: flex;
+    gap: 12px;
+    padding: 10px 20px 10px 20px;
+    font-family: "Josefin Sans", sans-serif;
+}
+.logoutBtn img{
+    width: 25px;
+    height: 25px;
+}
+.logoutBtn:hover{
+    background-color: red;
+    padding: 10px 20px 10px 20px;
+}
+.logoutBtn:hover:active{
+    background-color:#1D8E8E;
+}
+
+.profile{
+    position: relative;
+    left: 20px;
+    top: 10px;
+    width: 65px;
+    height: 65px;
+}
+.status{
+    font-family: "Gurajada", sans-serif;
+    color: white;
+    position: relative;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.all{
+    display: flex;
+    gap: 31px;
+}
+
+.name{
+    height: 26px;
+    font-size:26px ;
+}
+

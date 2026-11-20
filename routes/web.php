@@ -14,3 +14,6 @@ Route::get('/student/editComplaint', function () {
     return view('student.complaints.edit');
 });
 
+Route::get('/student/layout', function () {
+    return view('layouts.studentLayout');
+});
