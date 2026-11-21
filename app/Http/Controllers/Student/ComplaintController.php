@@ -39,4 +39,9 @@ class ComplaintController extends Controller
         $complaint->save();
         return redirect()->route('student.showComplaintData');
     }
+
+    public function deleteComplaintData($complaintID){
+        Complaint::where('Complaint_ID',$complaintID)->delete();
+        return redirect()->route('student.showComplaintData');
+    }
 }

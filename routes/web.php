@@ -20,3 +20,4 @@ Route::get('student',[DashboardController::class,'showComplaintData'])->name('st
 Route::get('student/submitComplaint',[ComplaintController::class,'submitComplaint'])->name('student.submitComplaint');
 Route::get('student/editComplaint/{complaintID}',[ComplaintController::class,'editComplaint'])->name('student.editComplaint');
 Route::put('student/updateComplaintData/{complaintID}',[ComplaintController::class,'updateComplaintData'])->name('student.updateComplaintData');
+Route::get('student/deleteComplaintData/{complaintID}',[ComplaintController::class,'deleteComplaintData'])->name('student.deleteComplaintData');

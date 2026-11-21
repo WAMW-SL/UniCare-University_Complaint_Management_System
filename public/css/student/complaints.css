@@ -46,6 +46,8 @@
 }
 
 .del{
+    height: 45px;
+    border-radius: 14px;
     background-color: white;
     color: red;
     border-color: red;
@@ -121,3 +123,8 @@
     background-color: #57D13B !important;
     border-color: #57D13B;
 }
+.del:disabled{
+    background-color: #C2410C;
+    border-color: #C2410C;
+}
+

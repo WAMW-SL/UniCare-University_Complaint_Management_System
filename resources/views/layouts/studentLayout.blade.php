@@ -49,7 +49,7 @@
                 <div class='btnSet'>
                     <a type="button" class="add btn btn-primary" href="{{ route('student.submitComplaint') }}">Add</a>
                     <button type="button" class="edit btn btn-primary" id="editBtn" disabled>Edit</button>
-                    <a type="button" class="del btn btn-primary">Delete</a>
+                    <button type="button" class="del btn btn-primary" id="delBtn" disabled>Delete</button>
                 </div>
 
                 <div class="outerbg">
@@ -110,6 +110,7 @@
                 selectedID = this.dataset.id;
 
                 document.getElementById('editBtn').disabled = false;
+                document.getElementById('delBtn').disabled = false;
             });
 
         });
@@ -118,6 +119,13 @@
 
             if (selectedID !== null) {
                 window.location.href = `/student/editComplaint/${selectedID}`;
+            }
+
+        });
+        document.getElementById('delBtn').addEventListener('click', function() {
+
+            if (selectedID !== null) {
+                window.location.href = `/student/deleteComplaintData/${selectedID}`;
             }
 
         });
