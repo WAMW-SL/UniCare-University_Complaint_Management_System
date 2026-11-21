@@ -17,4 +17,6 @@ Route::get('/student', function () {
 
 Route::post('student/storeComplaintData',[ComplaintController::class,'storeComplaintData'])->name('student.storeComplaintData');
 Route::get('student',[DashboardController::class,'showComplaintData'])->name('student.showComplaintData');
-Route::get('stuednt/submitComplaint',[ComplaintController::class,'submitComplaint'])->name('student.submitComplaint');
+Route::get('student/submitComplaint',[ComplaintController::class,'submitComplaint'])->name('student.submitComplaint');
+Route::get('student/editComplaint/{complaintID}',[ComplaintController::class,'editComplaint'])->name('student.editComplaint');
+Route::put('student/updateComplaintData/{complaintID}',[ComplaintController::class,'updateComplaintData'])->name('student.updateComplaintData');

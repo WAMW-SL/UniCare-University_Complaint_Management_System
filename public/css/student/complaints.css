@@ -26,6 +26,8 @@
 }
 
 .edit{
+    height: 45px;
+    border-radius: 14px;
     background-color: white;
     color: #57D13B;
     border-color: #57D13B;
@@ -73,9 +75,9 @@
     top: 0px;
 }
 
-tbody tr:hover td{
+/* tbody tr:hover td{
     background-color: #D3EFEF;
-}
+} */
 
 .tblbg{
     width: 98%;
@@ -105,4 +107,17 @@ tbody tr:hover td{
     width: 70px;
     justify-content: center;
     left: 21px;
+}
+
+.complaintRow {
+    cursor: pointer;
+}
+
+.complaintRow.selected td {
+    background-color: #D3EFEF !important;
+    color:black;
+}
+.edit:disabled{
+    background-color: #57D13B !important;
+    border-color: #57D13B;
 }

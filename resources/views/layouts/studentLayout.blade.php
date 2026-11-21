@@ -48,7 +48,7 @@
                 tabindex="0">
                 <div class='btnSet'>
                     <a type="button" class="add btn btn-primary" href="{{ route('student.submitComplaint') }}">Add</a>
-                    <a type="button" class="edit btn btn-primary">Edit</a>
+                    <button type="button" class="edit btn btn-primary" id="editBtn" disabled>Edit</button>
                     <a type="button" class="del btn btn-primary">Delete</a>
                 </div>
 
@@ -67,14 +67,18 @@
                             </thead>
                             <tbody>
                                 @foreach ($complaints as $complaint)
-                                <tr>
-                                    <td>{{ $complaint->Complaint_ID }}</td>
-                                    <td>{{ $complaint->Description }}</td>
-                                    <td>{{ $complaint->Category }}</td>
-                                    <td>{{ $complaint->Submitted_Date }}</td>
-                                    <td>{{ $complaint->Submitted_Time }}</td>
-                                    <td><div class="<?php if($complaint['Status']==="Pending"){echo "pending";} ?>">{{ $complaint->Status  }}</div></td>
-                                </tr>
+                                    <tr class="complaintRow" data-id="{{ $complaint->Complaint_ID }}">
+                                        <td>{{ $complaint->Complaint_ID }}</td>
+                                        <td>{{ $complaint->Description }}</td>
+                                        <td>{{ $complaint->Category }}</td>
+                                        <td>{{ $complaint->Submitted_Date }}</td>
+                                        <td>{{ $complaint->Submitted_Time }}</td>
+                                        <td>
+                                            <div class="<?php if ($complaint['Status'] === 'Pending') {
+                                                echo 'pending';
+                                            } ?>">{{ $complaint->Status }}</div>
+                                        </td>
+                                    </tr>
                                 @endforeach
                             </tbody>
                         </table>
@@ -89,6 +93,34 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu" crossorigin="anonymous">
+    </script>
+    <script>
+        let selectedID = null;
+
+        document.querySelectorAll('.complaintRow').forEach(row => {
+
+            row.addEventListener('click', function() {
+
+                document.querySelectorAll('.complaintRow').forEach(r => {
+                    r.classList.remove('selected');
+                });
+
+                this.classList.add('selected');
+
+                selectedID = this.dataset.id;
+
+                document.getElementById('editBtn').disabled = false;
+            });
+
+        });
+
+        document.getElementById('editBtn').addEventListener('click', function() {
+
+            if (selectedID !== null) {
+                window.location.href = `/student/editComplaint/${selectedID}`;
+            }
+
+        });
     </script>
 </body>
 
