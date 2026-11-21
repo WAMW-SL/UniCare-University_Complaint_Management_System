@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\Student\ComplaintController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -17,3 +17,5 @@ Route::get('/student/editComplaint', function () {
 Route::get('/student/layout', function () {
     return view('layouts.studentLayout');
 });
+
+Route::post('student/storeComplaintData',[ComplaintController::class,'storeComplaintData'])->name('student.storeComplaintData');

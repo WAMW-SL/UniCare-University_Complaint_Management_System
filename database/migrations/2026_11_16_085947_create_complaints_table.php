@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('complaints', function (Blueprint $table) {
             $table->id();
             $table->string('Complaint_ID')->nullable()->unique();
-            $table->string('User_ID');
+            $table->string('User_ID')->nullable();
             $table->foreign('User_ID')
                   ->references('User_ID')
                   ->on('users');
@@ -23,7 +23,7 @@ return new class extends Migration
             $table->date('Submitted_Date');
             $table->time('Submitted_Time');
             $table->string('Status');
-            $table->string('Assigned_Department');
+            $table->string('Assigned_Department')->nullable();
             $table->foreign('Assigned_Department')
                   ->references('Department_ID')
                   ->on('departments');
