@@ -20,6 +20,11 @@ class ComplaintController extends Controller
 
         $complaint->Complaint_ID='C-'.str_pad(strval($complaint->id),4,'0',STR_PAD_LEFT);
         $complaint->save();
-        return "success";
+        return redirect()->route('student.showData');
     }
+
+    public function submitComplaint(){
+        return view('student.complaints.create');
+    }
+
 }

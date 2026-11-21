@@ -1,4 +1,4 @@
-@extends('layouts.Pages_without_dashboard')
+@extends('layouts.formLayout')
 
 @section('title', 'Student|Edit Complaint')
 

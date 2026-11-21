@@ -1,0 +1,108 @@
+.btnSet{
+    display: flex;
+    flex-direction: column;
+    width:83px;
+    gap:10px;
+    position: relative;
+    left: 10px;
+    top: 10px;
+}
+
+.btnSet a{
+    height: 45px;
+    border-radius: 14px;
+}
+
+.add{
+    background-color: white;
+    color: blue;
+    border-color: blue;
+    border-width: 3px;
+}
+.add:hover:active{
+    background-color: white;
+    color: blue;
+    border-color: blue;
+}
+
+.edit{
+    background-color: white;
+    color: #57D13B;
+    border-color: #57D13B;
+    border-width: 3px;
+}
+.edit:hover{
+    background-color: #57D13B;
+    color: white;
+    border-color: #57D13B;
+    border-width: 3px;
+}
+.edit:hover:active{
+    background-color: white;
+    color: #57D13B;
+    border-color: #57D13B;
+}
+
+.del{
+    background-color: white;
+    color: red;
+    border-color: red;
+    border-width: 3px;
+}
+.del:hover{
+    background-color: red;
+    color: white;
+    border-color: red;
+    border-width: 3px;
+}
+.del:hover:active{
+    background-color: white;
+    color: red;
+    border-color: red;
+}
+
+.tbl{
+    width: 1267px;
+    background-color: white;
+    margin-bottom: 0px;
+}
+
+.tbl th{
+    background-color: #D3EFEF;
+    position: sticky;
+    top: 0px;
+}
+
+tbody tr:hover td{
+    background-color: #D3EFEF;
+}
+
+.tblbg{
+    width: 98%;
+    height: 464px;
+    position: relative;
+    left: 12px;
+    top: 8px;
+    overflow: auto;
+}
+.outerbg{
+    width: 98%;
+    height: 480px;
+    position: relative;
+    background-color: white;
+    left: 13px;
+    top: 20px;
+    border-radius: 10px;
+}
+
+.pending{
+    display: flex;
+    position: relative;
+    background-color: #FFEDD5;
+    color: #C2410C;
+    border-width: 2px;
+    border-radius: 8px;
+    width: 70px;
+    justify-content: center;
+    left: 21px;
+}

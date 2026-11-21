@@ -8,7 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('css/student/layoutWithDashboard.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/student/layout.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/student/complaints.css') }}">
 
     <title>@yield('title')</title>
 </head>
@@ -44,7 +45,42 @@
             <div class="tab tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab"
                 tabindex="0">@yield('profile')</div>
             <div class="tab tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab"
-                tabindex="0">@yield('complaints')</div>
+                tabindex="0">
+                <div class='btnSet'>
+                    <a type="button" class="add btn btn-primary" href="{{ route('student.submitComplaint') }}">Add</a>
+                    <a type="button" class="edit btn btn-primary">Edit</a>
+                    <a type="button" class="del btn btn-primary">Delete</a>
+                </div>
+
+                <div class="outerbg">
+                    <div class="tblbg">
+                        <table class="table tbl">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Complaint ID</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Category</th>
+                                    <th scope="col">Submitted Date</th>
+                                    <th scope="col">Submitted Time</th>
+                                    <th scope="col">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($complaints as $complaint)
+                                <tr>
+                                    <td>{{ $complaint->Complaint_ID }}</td>
+                                    <td>{{ $complaint->Description }}</td>
+                                    <td>{{ $complaint->Category }}</td>
+                                    <td>{{ $complaint->Submitted_Date }}</td>
+                                    <td>{{ $complaint->Submitted_Time }}</td>
+                                    <td><div class="<?php if($complaint['Status']==="Pending"){echo "pending";} ?>">{{ $complaint->Status  }}</div></td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="header">
