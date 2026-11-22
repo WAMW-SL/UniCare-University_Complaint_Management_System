@@ -36,11 +36,11 @@
                 data-bs-target="#v-pills-complaints" type="button" role="tab" aria-controls="v-pills-complaints"
                 aria-selected="false"><img src="{{ asset('images/register.png') }}" alt="complaints"><span>
                     Complaints</span></button>
-            <button class="compl tabBtn nav-link" id="v-pills-users-tab" data-bs-toggle="pill"
+            <button class="users tabBtn nav-link" id="v-pills-users-tab" data-bs-toggle="pill"
                 data-bs-target="#v-pills-users" type="button" role="tab" aria-controls="v-pills-users"
                 aria-selected="false"><img src="{{ asset('images/users.png') }}" alt="complaints"><span>
                     Users</span></button>
-            <button class="compl tabBtn nav-link" id="v-pills-departments-tab" data-bs-toggle="pill"
+            <button class="dep tabBtn nav-link" id="v-pills-departments-tab" data-bs-toggle="pill"
                 data-bs-target="#v-pills-departments" type="button" role="tab" aria-controls="v-pills-departments"
                 aria-selected="false"><img src="{{ asset('images/departments.png') }}" alt="complaints"><span>
                     Departments</span></button>

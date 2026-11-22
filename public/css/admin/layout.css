@@ -76,13 +76,19 @@ body{
 }
 
 .dash{
-       padding: 10px 85px 10px 20px !important;
+       padding: 10px 88px 10px 20px !important;
 }
 .prof{
-    padding: 10px 89px 10px 20px !important;
+    padding: 10px 95px 10px 20px !important;
 }
 .compl{
-    padding:10px 55px 10px 20px !important;
+    padding:10px 87px 10px 20px !important;
+}
+.users{
+    padding:10px 129px 10px 20px !important;
+}
+.dep{
+    padding:10px 74px 10px 20px !important;
 }
 
 .tabBtn.active{

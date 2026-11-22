@@ -1,0 +1,87 @@
+.tbl{
+    width: 1267px;
+    background-color: white;
+    margin-bottom: 0px;
+}
+
+.tbl th{
+    background-color: #D3EFEF;
+    position: sticky;
+    top: 0px;
+}
+
+.tblbg{
+    width: 98%;
+    height: 464px;
+    position: relative;
+    left: 12px;
+    top: 8px;
+    overflow: auto;
+}
+.outerbg{
+    width: 98%;
+    height: 480px;
+    position: relative;
+    background-color: white;
+    left: 13px;
+    top: 20px;
+    border-radius: 10px;
+}
+
+.pending{
+    display: flex;
+    position: relative;
+    background-color: #FFEDD5;
+    color: #C2410C;
+    border-width: 2px;
+    border-radius: 8px;
+    width: 70px;
+    justify-content: center;
+    left: 21px;
+}
+
+.complaintRow {
+    cursor: pointer;
+}
+
+.complaintRow.selected td {
+    background-color: #D3EFEF !important;
+    color:black;
+}
+
+h2 {
+    margin-left: 32px;
+}
+
+.options{
+    display: flex;
+    align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.btnSub{
+    width:750px;
+    margin-top: 50px;
+    background-color: white;
+    border-color: #1D8E8E;
+    color: #1D8E8E;
+    border-width: 2px;
+    border-radius: 10px;
+    font-family: "Inter", sans-serif;
+}
+.btnSub:hover{
+    background-color: #1D8E8E;
+    color: white;
+    border-color:#1D8E8E ;
+}
+.btnSub:hover:active{
+    background-color: white;
+    border-color: #1D8E8E;
+    color:#1D8E8E ;
+}
+.btnSub:disabled{
+    background-color: #1D8E8E;
+    border-color: #1D8E8E;
+    color: white;
+}
+
