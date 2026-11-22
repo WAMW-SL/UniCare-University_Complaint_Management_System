@@ -10,7 +10,7 @@
         integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/student/layout.css') }}">
     <link rel="stylesheet" href="{{ asset('css/student/complaints.css') }}">
-
+    <link rel="stylesheet" href="{{ asset('css/student/dashboard.css') }}">
     <title>@yield('title')</title>
 </head>
 
@@ -41,11 +41,59 @@
                 out</span></button>
         <div class="tab-content" id="v-pills-tabContent">
             <div class="tab tab-pane fade show active" id="v-pills-home" role="tabpanel"
-                aria-labelledby="v-pills-home-tab" tabindex="0">@yield('dashboard')</div>
+                aria-labelledby="v-pills-home-tab" tabindex="0">
+                <h3 class="welcome">Welcome, Nimal Fernando!</h3>
+                <div class="cards">
+                    @php
+                        $count = app(App\Http\Controllers\Student\DashboardController::class)->showComplaintCount();
+                    @endphp
+                    <div class="card">
+                        <div class="cardName">
+                            <img src="{{ asset('images/counter.png') }}">
+                            <span>Complaints Count</span>
+                        </div>
+                        <h2>{{ $count['total'] }}</h2>
+                    </div>
+                    <div class="card">
+                        <div class="cardName">
+                            <img src="{{ asset('images/pending.png') }}">
+                            <span>Pending</span>
+                        </div>
+                        <h2>{{ $count['pending'] }}</h2>
+                    </div>
+
+                    <div class="card">
+                        <div class="cardName">
+                            <img src="{{ asset('images/progress.png') }}">
+                            <span>In Progress</span>
+                        </div>
+                        <h2>{{ $count['progress'] }}</h2>
+                    </div>
+
+                    <div class="card">
+                        <div class="cardName">
+                            <img src="{{ asset('images/resolved.png') }}">
+                            <span>Resolved</span>
+                        </div>
+                        <h2>{{ $count['resolved'] }}</h2>
+                    </div>
+                    <div class="card">
+                        <div class="cardName">
+                            <img src="{{ asset('images/assign.png') }}">
+                            <span>Assigned</span>
+                        </div>
+                        <h2>{{ $count['assigned'] }}</h2>
+                    </div>
+
+                </div>
+            </div>
             <div class="tab tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab"
                 tabindex="0">@yield('profile')</div>
             <div class="tab tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab"
                 tabindex="0">
+                @php
+                    $complaints = app(App\Http\Controllers\Student\DashboardController::class)->showComplaintData();
+                @endphp
                 <div class='btnSet'>
                     <a type="button" class="add btn btn-primary" href="{{ route('student.submitComplaint') }}">Add</a>
                     <button type="button" class="edit btn btn-primary" id="editBtn" disabled>Edit</button>
@@ -74,9 +122,7 @@
                                         <td>{{ $complaint->Submitted_Date }}</td>
                                         <td>{{ $complaint->Submitted_Time }}</td>
                                         <td>
-                                            <div class="<?php if ($complaint['Status'] === 'Pending') {
-                                                echo 'pending';
-                                            } ?>">{{ $complaint->Status }}</div>
+                                            <div class="{{ strtolower(str_replace(" ","-",$complaint->Status)) }}">{{ $complaint->Status }}</div>
                                         </td>
                                     </tr>
                                 @endforeach

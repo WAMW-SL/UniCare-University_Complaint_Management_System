@@ -1,0 +1,49 @@
+
+.welcome {
+    font-size: 20px;
+    font-weight: 600;
+    width: fit-content;
+    position: relative;
+    margin: 20px 0px 20px 0px;
+    left: 178px;
+}
+
+.cards {
+    display: grid;
+    position: relative;
+    left: 174px;
+    grid-template-rows: repeat(3, 166px);
+    grid-template-columns: repeat(2, 476px);
+    gap: 32px 38px;
+    margin-left: 0px;
+}
+
+.card {
+    background-color: #FFF9FA;
+    border-radius: 15px;
+    height: 166px;
+    padding: 8px 10px;
+}
+
+.cardName{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.cardName img {
+    width: 60px;
+    height: 60px;
+}
+
+.card h2 {
+    position: relative;
+    width: 60px;
+    right: 3px;
+    top: 10px;
+    font-size: 35px;
+    font-weight: 700;
+    margin: 0;
+}

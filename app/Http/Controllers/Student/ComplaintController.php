@@ -20,7 +20,7 @@ class ComplaintController extends Controller
 
         $complaint->Complaint_ID='C-'.str_pad(strval($complaint->id),4,'0',STR_PAD_LEFT);
         $complaint->save();
-        return redirect()->route('student.showComplaintData');
+        return redirect()->route('student.showDashboard');
     }
 
     public function submitComplaint(){
@@ -37,11 +37,11 @@ class ComplaintController extends Controller
         $complaint->Category=$request->category;
         $complaint->Description=$request->desc;
         $complaint->save();
-        return redirect()->route('student.showComplaintData');
+        return redirect()->route('student.showDashboard');
     }
 
     public function deleteComplaintData($complaintID){
         Complaint::where('Complaint_ID',$complaintID)->delete();
-        return redirect()->route('student.showComplaintData');
+        return redirect()->route('student.showDashboard');
     }
 }

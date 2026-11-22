@@ -6,8 +6,8 @@ use App\Http\Controllers\Department\DashboardController as DepartmentDashboardCo
 
 use Illuminate\Support\Facades\Route;
 
+Route::get('student',[StudentDashboardController::class,'showDashboard'])->name('student.showDashboard');
 Route::post('student/storeComplaintData',[ComplaintController::class,'storeComplaintData'])->name('student.storeComplaintData');
-Route::get('student',[StudentDashboardController::class,'showComplaintData'])->name('student.showComplaintData');
 Route::get('student/submitComplaint',[ComplaintController::class,'submitComplaint'])->name('student.submitComplaint');
 Route::get('student/editComplaint/{complaintID}',[ComplaintController::class,'editComplaint'])->name('student.editComplaint');
 Route::put('student/updateComplaintData/{complaintID}',[ComplaintController::class,'updateComplaintData'])->name('student.updateComplaintData');

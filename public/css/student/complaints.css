@@ -75,6 +75,7 @@
     background-color: #D3EFEF;
     position: sticky;
     top: 0px;
+    z-index: 10;
 }
 
 .tblbg{
@@ -100,11 +101,47 @@
     position: relative;
     background-color: #FFEDD5;
     color: #C2410C;
-    border-width: 2px;
-    border-radius: 8px;
+    border-radius: 11px;
     width: 70px;
+    height: 26px;
     justify-content: center;
     left: 21px;
+}
+.assigned{
+        display: flex;
+    position: relative;
+    background-color: #DBEAFE;
+    color: #1D4ED8;
+    border-width: 2px;
+    border-radius: 11px;
+    width: 75px;
+    height: 27px;
+    justify-content: center;
+    left: 21px;
+}
+.in-progress{
+    display: flex;
+    position: relative;
+    background-color: #EDE9FE;
+    color: #6D28D9;
+    border-width: 2px;
+    border-radius: 11px;
+    width: 85px;
+    height: 26px;
+    justify-content: center;
+    left: 17px;
+}
+.resolved{
+    display: flex;
+    position: relative;
+    background-color: #D1FAE5;
+    color: #047857;
+    border-width: 2px;
+    border-radius: 11px;
+    width: 73px;
+    height: 25px;
+    justify-content: center;
+    left: 22px;
 }
 
 .complaintRow {
